@@ -59,9 +59,11 @@
       // keyup
       document
         .getElementById("confirmation-box")
-        .addEventListener("keyup", function (event) {
-          if (event.target.value = 'ats') {
+        .addEventListener("keyup", function(event) {
+          if (event.target.value = 'delete') {
             document.getElementById('delete-btn').removeAttribute('disabled');
+          } else {
+            document.getElementById('delete-btn').setAttribute('disabled')
           }
         });
 
