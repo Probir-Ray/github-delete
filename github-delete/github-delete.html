@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github delete</title>
+  </head>
+
+  <body>
+    <h3>Secret information</h3>
+    <section>
+      <p id="secret-info">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga fugiat
+        natus rem at dolores molestiae.
+      </p>
+      <input type="text" id="confirmation-box" placeholder="enter text" />
+      <button id="delete-btn" disabled>Delete Confirm</button>
+    </section>
+
+    <script>
+      document
+        .getElementById("delete-btn")
+        .addEventListener("click", function () {
+          const info = document.getElementById("secret-info");
+          info.style.display = "none";
+        });
+
+      // Focus
+      document
+        .getElementById("confirmation-box")
+        .addEventListener("focus", function () {
+          document.body.style.backgroundColor = "coral";
+        });
+
+      // Blur
+      document
+        .getElementById("confirmation-box")
+        .addEventListener("blur", function () {
+          document.body.style.backgroundColor = "white";
+        });
+
+      // Keydown
+      /* document
+      .getElementById("confirmation-box")
+      .addEventListener("keydown", function () {
+        const confirmBox = document.getElementById("confirmation-box").value;
+        console.log(confirmBox);
+      }); */
+
+      // keypress
+      /* document
+      .getElementById("confirmation-box")
+      .addEventListener("keypress", function () {
+        const confirmBox = document.getElementById("confirmation-box").value;
+        console.log(confirmBox);
+      }); */
+
+      // keyup
+      document
+        .getElementById("confirmation-box")
+        .addEventListener("keyup", function (event) {
+          if (event.target.value = 'ats') {
+            document.getElementById('delete-btn').removeAttribute('disabled');
+          }
+        });
+
+      //change event
+      document
+        .getElementById("confirmation-box")
+        .addEventListener("change", function () {
+          const confirmBox = document.getElementById("confirmation-box").value;
+          console.log(confirmBox);
+        });
+    </script>
+  </body>
+</html>
