@@ -60,10 +60,10 @@
       document
         .getElementById("confirmation-box")
         .addEventListener("keyup", function(event) {
-          if (event.target.value = 'delete') {
+          if (event.target.value == 'delete') {
             document.getElementById('delete-btn').removeAttribute('disabled');
           } else {
-            document.getElementById('delete-btn').setAttribute('disabled')
+            document.getElementById('delete-btn').setAttribute('disabled', true)
           }
         });
 
