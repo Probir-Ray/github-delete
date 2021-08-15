@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Delegate</title>
+  </head>
+  <body>
+    <section>
+      <h3>Event Delegate</h3>
+      <ul id="item-list">
+        <li class="item">
+          Lorem ipsum dolor sit amet consectetur adipisicing.
+        </li>
+        <li class="item">Dolorem possimus neque maxime sequi. Non, ex!</li>
+        <li class="item">Suscipit iste nisi sapiente, inventore nemo vero.</li>
+        <li class="item">
+          Perferendis, natus possimus. Adipisci dolorum nam praesentium?
+        </li>
+        <li class="item">
+          Necessitatibus facere iure rerum recusandae, quasi voluptates.
+        </li>
+      </ul>
+      <input type="text" id="text-box" />
+      <button id="add-item">Add Item</button>
+    </section>
+
+    <script>
+
+      const itemList = document.getElementsByClassName("item");
+      for (const item of itemList) {
+        item.addEventListener("click", function (e) {
+          // document.querySelector('.item-list').removeChild(item);
+          e.target.parentNode.removeChild(e.target);
+          
+        });
+      }
+
+      document.getElementById('item-list').addEventListener('click', function(event) {
+        event.target.parentNode.removeChild(event.target);
+        })
+
+      document
+        .getElementById("add-item")
+        .addEventListener("click", function () {
+          const li = document.createElement("li");
+          li.classList.add('item');
+          li.innerText = document.getElementById("text-box").value;
+          document.getElementById("item-list").appendChild(li);
+          document.getElementById("text-box").value = "";
+          
+        });
+
+
+    </script>
+  </body>
+</html>

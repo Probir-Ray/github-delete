@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+</head>
+<body>
+
+<main>
+    <section class="section-one">
+        <h3>Bubble event</h3>
+        <ul id="list-item">
+            <li>Item-1</li>
+            <li id="item">Item-2</li>
+            <li>Item-3</li>
+            <li>Item-4</li>
+        </ul>
+    </section>
+</main>
+    
+
+<script>
+    
+    document.getElementById('list-item').addEventListener('click', function() {
+        console.log('ul clicked');
+    })
+    document.querySelector('.section-one').addEventListener('click', function() {
+        console.log('section clicked');
+    })
+    document.querySelector('#item').addEventListener('click', function(e) {
+        console.log('li click');
+        e.stopImmediatePropagation();
+    })
+    document.querySelector('#item').addEventListener('click', function(e) {
+        console.log('li click one');
+    })
+    document.querySelector('#item').addEventListener('click', function(e) {
+        console.log('li click two');
+    })
+    document.querySelector('#item').addEventListener('click', function(e) {
+        console.log('li click three');
+    })
+</script>
+</body>
+</html>
